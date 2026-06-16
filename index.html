@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mwajei | collection · Fashion eCommerce</title>
+  <!-- Font Awesome (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+<body>
+<div class="container" id="app">
+
+  <!-- header -->
+  <header class="navbar">
+    <div class="logo"><i class="fas fa-tshirt"></i>Mwajei Collection</div>
+    <div class="nav-actions">
+      <span class="delivery-badge"><i class="fas fa-truck"></i> free delivery</span>
+      <button class="contact-nav-btn" id="contactNavBtn"><i class="fas fa-envelope"></i> Contact</button>
+      <div class="cart-icon" id="cartIcon">
+        <i class="fas fa-shopping-bag"></i>
+        <span id="cartCount">0</span>
+      </div>
+      <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i> <span id="themeLabel">Dark</span></button>
+    </div>
+  </header>
+
+  <!-- HERO SLIDER -->
+  <div class="hero-slider" id="heroSlider">
+    <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=1200&h=400&fit=crop&crop=center');">
+      <div class="hero-content">
+        <h1>Style that <span>speaks</span></h1>
+        <p>Fresh looks for men, women, girls & boys — curated with love.</p>
+        <button class="hero-btn" onclick="document.querySelector('.categories').scrollIntoView({behavior:'smooth'})"><i class="fas fa-arrow-right"></i> Shop now</button>
+      </div>
+    </div>
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&h=400&fit=crop&crop=center');">
+      <div class="hero-content">
+        <h1>New <span>collection</span></h1>
+        <p>Discover the latest trends in sustainable fashion.</p>
+        <button class="hero-btn" onclick="document.querySelector('.categories').scrollIntoView({behavior:'smooth'})"><i class="fas fa-arrow-right"></i> Explore</button>
+      </div>
+    </div>
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1200&h=400&fit=crop&crop=center');">
+      <div class="hero-content">
+        <h1>Kids <span>love</span> us</h1>
+        <p>Adorable styles for girls & boys, designed for play.</p>
+        <button class="hero-btn" onclick="document.querySelector('.categories').scrollIntoView({behavior:'smooth'})"><i class="fas fa-arrow-right"></i> Kids shop</button>
+      </div>
+    </div>
+    <div class="slider-dots" id="sliderDots"></div>
+    <div class="slider-controls">
+      <button id="prevSlide"><i class="fas fa-chevron-left"></i></button>
+      <button id="nextSlide"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+
+  <!-- category filter -->
+  <div class="categories" id="categoryFilter">
+    <button class="cat-btn active" data-cat="all"><i class="fas fa-th-large"></i> All</button>
+    <button class="cat-btn" data-cat="men"><i class="fas fa-male"></i> Men</button>
+    <button class="cat-btn" data-cat="women"><i class="fas fa-female"></i> Women</button>
+    <button class="cat-btn" data-cat="girls"><i class="fas fa-child"></i> Girls</button>
+    <button class="cat-btn" data-cat="boys"><i class="fas fa-child"></i> Boys</button>
+  </div>
+
+  <!-- product grid -->
+  <div class="product-grid" id="productGrid"></div>
+
+  <!-- CONTACT FORM -->
+  <section class="contact-section" id="contactSection">
+    <h3><i class="fas fa-paper-plane"></i> Get in touch</h3>
+    <form class="contact-form" id="contactForm">
+      <div>
+        <label for="contactName">Full name *</label>
+        <input type="text" id="contactName" placeholder="Your name" required>
+      </div>
+      <div>
+        <label for="contactEmail">Email *</label>
+        <input type="email" id="contactEmail" placeholder="you@example.com" required>
+      </div>
+      <div class="full-width">
+        <label for="contactSubject">Subject</label>
+        <select id="contactSubject">
+          <option value="general">General inquiry</option>
+          <option value="order">Order question</option>
+          <option value="returns">Returns & exchanges</option>
+          <option value="feedback">Feedback</option>
+        </select>
+      </div>
+      <div class="full-width">
+        <label for="contactMessage">Message *</label>
+        <textarea id="contactMessage" placeholder="Tell us how we can help..." required></textarea>
+      </div>
+      <div class="full-width">
+        <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send message</button>
+      </div>
+      <div id="formMessage" class="form-message"></div>
+    </form>
+  </section>
+
+  <!-- TESTIMONIAL SLIDER -->
+  <div class="testimonial-section">
+    <h3 style="display: flex; gap: 8px; align-items: center; margin-bottom: 0.8rem;"><i class="fas fa-quote-left" style="color: var(--primary);"></i> Real reviews</h3>
+    <div class="testimonial-track" id="testiTrack">
+      <div class="testimonial-item"><i class="fas fa-star"></i><p>“The fit and fabric are incredible. My new go-to.”</p><h5>— Emma R.</h5></div>
+      <div class="testimonial-item"><i class="fas fa-star"></i><p>“Kids' collection is a dream. My daughter loves it!”</p><h5>— James K.</h5></div>
+      <div class="testimonial-item"><i class="fas fa-star"></i><p>“Free delivery & premium quality. Absolutely worth it.”</p><h5>— Sophia L.</h5></div>
+      <div class="testimonial-item"><i class="fas fa-star"></i><p>“Men's range is sharp and comfortable. Already ordered twice.”</p><h5>— David M.</h5></div>
+      <div class="testimonial-item"><i class="fas fa-star"></i><p>“Amazing service and the colors are even better in person.”</p><h5>— Olivia P.</h5></div>
+    </div>
+    <div class="testi-controls">
+      <button id="testiPrev"><i class="fas fa-chevron-left"></i></button>
+      <button id="testiNext"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <h3 style="margin-bottom: 0.5rem;"><i class="fas fa-question-circle" style="color: var(--primary);"></i> Frequent questions</h3>
+  <div class="faq-grid" id="faqContainer">
+    <div class="faq-item active">
+      <div class="faq-question"><span>How long does delivery take?</span><i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer open">We offer free delivery anywhere, usually within 3-5 business days.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question"><span>What is your return policy?</span><i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer">30-day returns with free pickup. Items must be unworn with tags.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question"><span>Do you have size guides?</span><i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer">Yes! Check the size guide on each product page.</div>
+    </div>
+  </div>
+
+  <footer>© 2026 Mwajei-collection — style for everyone </footer>
+</div>
+
+<!-- CART OVERLAY -->
+<div class="cart-overlay" id="cartOverlay">
+  <div class="cart-panel">
+    <h2><span><i class="fas fa-shopping-bag"></i> Cart</span> <button id="closeCart"><i class="fas fa-times"></i></button></h2>
+    <div id="cartItems"></div>
+    <div class="cart-total"><span>Total</span> <span id="cartTotal">$0.00</span></div>
+    <button class="checkout-btn" id="checkoutBtn"><i class="fas fa-lock"></i> Proceed to Checkout</button>
+  </div>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
